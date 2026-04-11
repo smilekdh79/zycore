@@ -1,0 +1,11 @@
+{
+  "name": "zycore-landing",
+  "version": "1.0.0",
+  "description": "ZYCORE 반응형 랜딩 페이지",
+  "scripts": {
+    "start": "serve . -p ${PORT:-3000} -s"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
