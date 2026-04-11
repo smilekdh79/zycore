@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZYCORE | 재활용·폐기물 자원 원스탑 솔루션</title>
+  <meta name="description" content="자원 재생 컨설팅과 재생 자원 거래 전문 기업 ZYCORE. ESG 경영을 위한 재활용 수거, 폐배터리 거래, 자원 거래 상담을 한 번에 해결하세요." />
+  <meta property="og:title" content="ZYCORE | 재활용·폐기물 자원 원스탑 솔루션" />
+  <meta property="og:description" content="자원 재생 컨설팅 전문 기업. ESG 경영의 첫걸음, ZYCORE와 함께하세요." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MFNCP45V');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --green-light: #4ade80;
+      --navy: #0a1628;
+      --navy-2: #0f2040;
+      --navy-3: #162845;
+      --gray: #6b7280;
+      --gray-light: #f3f4f6;
+      --white: #ffffff;
+      --text: #1e293b;
+      --border: rgba(34,197,94,0.2);
+      --shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); overflow-x: hidden; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 70px;
+      background: rgba(10,22,40,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-weight: 800; color: #fff; font-size: 16px;
+    }
+    .logo-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 20px; color: #fff; letter-spacing: 2px; }
+    nav { display: flex; gap: 32px; }
+    nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--green); }
+    .header-cta {
+      background: var(--green); color: #fff; border: none; border-radius: 8px;
+      padding: 10px 22px; font-size: 14px; font-weight: 700; cursor: pointer;
+      font-family: 'Noto Sans KR', sans-serif; transition: background 0.2s, transform 0.1s;
+    }
+    .header-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 50%, #0d2210 100%);
+      position: relative; overflow: hidden; padding: 120px 5% 80px;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.06;
+      background-image: linear-gradient(rgba(34,197,94,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-glow {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,197,94,0.18) 0%, transparent 70%);
+      top: -100px; right: -100px; pointer-events: none;
+    }
+    .hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.12); border: 1px solid var(--border);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
+    }
+    .hero-badge span { color: var(--green); font-size: 13px; font-weight: 500; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:0.5; transform:scale(1.3); } }
+    h1 {
+      font-size: clamp(36px, 5vw, 68px); font-weight: 900; line-height: 1.15;
+      color: #fff; margin-bottom: 24px; letter-spacing: -1px;
+    }
+    .highlight { color: var(--green); position: relative; }
+    .hero-sub { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 560px; margin-bottom: 48px; }
+    .cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff; border: none; border-radius: 12px;
+      padding: 16px 28px; font-size: 16px; font-weight: 700;
+      cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
+      box-shadow: 0 4px 24px rgba(34,197,94,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(34,197,94,0.45); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; border-radius: 12px; padding: 16px 28px; font-size: 16px; font-weight: 600;
+      cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+      transition: background 0.2s, border-color 0.2s; text-decoration: none; backdrop-filter: blur(4px);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--green); }
+    .hero-stats {
+      margin-top: 64px; display: flex; gap: 48px; flex-wrap: wrap;
+      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item { color: #fff; }
+    .stat-num { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 800; color: var(--green); line-height: 1; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 90px 5%; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-tag { display: inline-block; color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .section-sub { font-size: 17px; color: var(--gray); line-height: 1.7; max-width: 560px; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--gray-light); }
+    .services-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card {
+      background: #fff; border-radius: 20px; padding: 40px 32px;
+      border: 1px solid #e5e7eb; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.1); border-color: var(--green); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 60px; height: 60px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.06));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin-bottom: 24px;
+    }
+    .service-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .service-card p { color: var(--gray); line-height: 1.7; font-size: 15px; margin-bottom: 24px; }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--green); font-weight: 700; font-size: 14px; text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* ── CTA BANNER ── */
+    #cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      padding: 90px 5%;
+    }
+    .cta-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .cta-card {
+      border-radius: 20px; padding: 36px 28px;
+      border: 1px solid rgba(34,197,94,0.2);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+      display: flex; flex-direction: column; gap: 16px;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+    .cta-card:hover { background: rgba(34,197,94,0.08); border-color: var(--green); transform: translateY(-4px); }
+    .cta-card-icon { font-size: 36px; }
+    .cta-card h3 { font-size: 22px; font-weight: 700; color: #fff; }
+    .cta-card p { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.6; flex: 1; }
+    .cta-card-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff; border: none; border-radius: 10px;
+      padding: 14px 20px; font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+      transition: opacity 0.2s, transform 0.2s; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+    }
+    .cta-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── ESG SOCIAL PROOF ── */
+    #esg { background: #fff; }
+    .esg-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;
+    }
+    .esg-quote {
+      border-left: 4px solid var(--green); padding-left: 28px;
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700; line-height: 1.5; color: var(--text);
+    }
+    .esg-quote em { color: var(--green); font-style: normal; }
+    .esg-points { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+    .esg-point {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 20px; border-radius: 14px; border: 1px solid #e5e7eb;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .esg-point:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(34,197,94,0.08); }
+    .esg-point-icon { font-size: 24px; flex-shrink: 0; }
+    .esg-point h4 { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .esg-point p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+    .esg-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .esg-badge {
+      padding: 8px 18px; border-radius: 100px;
+      background: rgba(34,197,94,0.08); border: 1px solid var(--border);
+      color: var(--green-dark); font-size: 13px; font-weight: 600;
+    }
+
+    /* ── PROCESS ── */
+    #process { background: var(--gray-light); }
+    .process-steps { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .process-step {
+      background: #fff; border-radius: 16px; padding: 32px 24px;
+      border: 1px solid #e5e7eb; text-align: center; position: relative;
+    }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+    }
+    .process-step h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .process-step p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+    .step-arrow {
+      position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
+      color: var(--green); font-size: 20px; z-index: 1;
+    }
+    .process-step:last-child .step-arrow { display: none; }
+
+    /* ── CONTACT ── */
+    #contact { background: linear-gradient(135deg, var(--navy), #0d2210); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 56px; }
+    .contact-info { color: #fff; }
+    .contact-info h3 { font-size: 28px; font-weight: 800; margin-bottom: 24px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: rgba(34,197,94,0.15); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .contact-item-text label { display: block; font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+    .contact-item-text span { font-size: 17px; font-weight: 600; color: #fff; }
+    .phone-display {
+      margin-top: 36px; padding: 24px 28px; border-radius: 16px;
+      background: rgba(34,197,94,0.1); border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .phone-display-icon { font-size: 32px; }
+    .phone-display-label { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .phone-display-num {
+      font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: var(--green); letter-spacing: 1px;
+    }
+    .contact-form {
+      background: #fff; border-radius: 20px; padding: 40px;
+    }
+    .contact-form h3 { font-size: 22px; font-weight: 700; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 14px 16px; border: 1px solid #e5e7eb; border-radius: 10px;
+      font-size: 15px; font-family: 'Noto Sans KR', sans-serif; color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none; background: #fff;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--green); box-shadow: 0 0 0 3px rgba(34,197,94,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%; padding: 16px; border: none; border-radius: 12px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff; font-size: 17px; font-weight: 700; cursor: pointer;
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(34,197,94,0.35);
+    }
+    .form-submit:hover { opacity: 0.92; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #05101e; padding: 48px 5% 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 36px; }
+    .footer-brand .logo-text { font-size: 22px; }
+    .footer-tagline { color: rgba(255,255,255,0.45); font-size: 14px; margin-top: 8px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.45); font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { color: rgba(255,255,255,0.3); font-size: 13px; }
+    .footer-location { color: rgba(255,255,255,0.3); font-size: 13px; }
+
+    /* ── FLOATING PHONE ── */
+    .floating-phone {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      display: flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff; border-radius: 100px; padding: 14px 22px;
+      box-shadow: 0 8px 32px rgba(34,197,94,0.45);
+      text-decoration: none; font-weight: 700; font-size: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: float-in 0.6s ease 1s both;
+    }
+    .floating-phone:hover { transform: scale(1.04); box-shadow: 0 12px 40px rgba(34,197,94,0.55); }
+    @keyframes float-in { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .phone-pulse {
+      width: 10px; height: 10px; border-radius: 50%; background: #fff;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-cards { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step-arrow { display: none; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-cards { grid-template-columns: 1fr; }
+      .esg-inner { grid-template-columns: 1fr; gap: 40px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+      .header-cta { display: none; }
+      .floating-phone { padding: 14px 18px; font-size: 14px; }
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(10,22,40,0.97); backdrop-filter: blur(12px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: #fff; font-size: 22px; font-weight: 700; text-decoration: none; transition: color 0.2s; }
+    .mobile-nav a:hover { color: var(--green); }
+    .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFNCP45V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ── HEADER ── -->
+<header id="site-header">
+  <a class="logo" href="#hero" id="logo-link">
+    <div class="logo-mark">Z</div>
+    <span class="logo-text">ZYCORE</span>
+  </a>
+  <nav id="main-nav">
+    <a href="#services" id="nav-services">서비스</a>
+    <a href="#esg" id="nav-esg">ESG</a>
+    <a href="#process" id="nav-process">프로세스</a>
+    <a href="#contact" id="nav-contact">문의</a>
+  </nav>
+  <button class="header-cta" id="header-cta-btn" onclick="scrollToContact()">무료 상담 신청</button>
+  <div class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" role="button" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="메뉴 닫기">✕</button>
+  <a href="#services" onclick="toggleMobileNav()" id="mobile-nav-services">서비스</a>
+  <a href="#esg" onclick="toggleMobileNav()" id="mobile-nav-esg">ESG</a>
+  <a href="#process" onclick="toggleMobileNav()" id="mobile-nav-process">프로세스</a>
+  <a href="#contact" onclick="toggleMobileNav()" id="mobile-nav-contact">문의</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <div class="badge-dot"></div>
+      <span>자원 재생 컨설팅 전문 기업</span>
+    </div>
+    <h1 class="fade-up">
+      재활용·폐기물 자원<br />
+      <span class="highlight">원스탑 솔루션</span>
+    </h1>
+    <p class="hero-sub fade-up">
+      복잡한 자원 재생과 폐기물 관리, ZYCORE 하나로 해결하세요.<br />
+      재활용 수거부터 자원 거래까지, ESG 경영의 파트너입니다.
+    </p>
+    <div class="cta-group fade-up">
+      <a href="#contact" class="btn-primary" id="hero-cta-primary" onclick="trackCTA('재활용수거상담', 'hero')">
+        ♻️ 재활용 수거 상담
+      </a>
+      <a href="tel:01091693862" class="btn-secondary" id="hero-cta-phone" onclick="trackCTA('전화상담', 'hero')">
+        📞 010-9169-3862
+      </a>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="stat-item">
+        <div class="stat-num">ESG</div>
+        <div class="stat-label">경영 지원</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1:1</div>
+        <div class="stat-label">전담 컨설팅</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">원스탑</div>
+        <div class="stat-label">자원 재생 솔루션</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <span class="section-tag fade-up">OUR SERVICES</span>
+    <h2 class="section-title fade-up">ZYCORE의 핵심 서비스</h2>
+    <p class="section-sub fade-up">자원의 가치를 되살리는 전문 솔루션으로 지속가능한 미래를 함께 만들어갑니다.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up" id="service-card-consulting">
+        <div class="service-icon">♻️</div>
+        <h3>자원 재생 컨설팅</h3>
+        <p>기업의 폐기물 현황을 분석하고 최적의 자원 재생 방안을 제시합니다. ESG 경영 목표 달성을 위한 체계적인 로드맵을 제공합니다.</p>
+        <a href="#contact" class="service-link" id="service-link-consulting" onclick="trackCTA('자원재생컨설팅', 'service-card')">
+          상담 신청하기 →
+        </a>
+      </div>
+      <div class="service-card fade-up" id="service-card-battery">
+        <div class="service-icon">🔋</div>
+        <h3>폐배터리 거래</h3>
+        <p>사용이 완료된 배터리의 안전한 회수부터 재사용·재활용까지 전 과정을 지원합니다. 합리적인 가격으로 폐배터리를 거래하세요.</p>
+        <a href="#contact" class="service-link" id="service-link-battery" onclick="trackCTA('폐배터리거래', 'service-card')">
+          거래 문의하기 →
+        </a>
+      </div>
+      <div class="service-card fade-up" id="service-card-trade">
+        <div class="service-icon">🔄</div>
+        <h3>자원 거래 상담</h3>
+        <p>철스크랩, 비철금속, 폐플라스틱 등 다양한 재생 자원의 매입·판매를 중개합니다. 투명한 가격으로 신뢰할 수 있는 거래를 보장합니다.</p>
+        <a href="#contact" class="service-link" id="service-link-trade" onclick="trackCTA('자원거래상담', 'service-card')">
+          거래 상담하기 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA SECTION ── -->
+<section id="cta-section">
+  <div class="container">
+    <span class="section-tag fade-up" style="color:var(--green)">QUICK CONSULTATION</span>
+    <h2 class="section-title fade-up" style="color:#fff">지금 바로 문의하세요</h2>
+    <p class="section-sub fade-up" style="color:rgba(255,255,255,0.6)">전문 컨설턴트가 빠르게 답변드립니다.</p>
+    <div class="cta-cards">
+      <div class="cta-card fade-up" id="cta-card-recycling">
+        <div class="cta-card-icon">♻️</div>
+        <h3>재활용 수거 상담</h3>
+        <p>사업장 내 재활용 가능 자원의 체계적인 수거 및 처리 방법을 안내해 드립니다.</p>
+        <a href="#contact" class="cta-card-btn" id="cta-btn-recycling" onclick="trackCTA('재활용수거상담', 'cta-banner')">
+          수거 상담 신청 →
+        </a>
+      </div>
+      <div class="cta-card fade-up" id="cta-card-battery">
+        <div class="cta-card-icon">🔋</div>
+        <h3>폐배터리 거래</h3>
+        <p>EV 배터리, 산업용 배터리 등 다양한 폐배터리의 안전한 회수와 거래를 도와드립니다.</p>
+        <a href="#contact" class="cta-card-btn" id="cta-btn-battery" onclick="trackCTA('폐배터리거래', 'cta-banner')">
+          거래 문의하기 →
+        </a>
+      </div>
+      <div class="cta-card fade-up" id="cta-card-resource">
+        <div class="cta-card-icon">📦</div>
+        <h3>자원 거래 상담</h3>
+        <p>재생 자원의 매입·판매·중개 서비스로 폐기물을 수익으로 전환하세요.</p>
+        <a href="#contact" class="cta-card-btn" id="cta-btn-resource" onclick="trackCTA('자원거래상담', 'cta-banner')">
+          거래 상담하기 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ESG SOCIAL PROOF ── -->
+<section id="esg">
+  <div class="container">
+    <div class="esg-inner">
+      <div class="fade-up">
+        <span class="section-tag">ESG & SUSTAINABILITY</span>
+        <blockquote class="esg-quote">
+          "자원 재생, 재활용은<br />
+          <em>ESG 경영의 첫걸음</em> 입니다."
+        </blockquote>
+        <p style="color:var(--gray);margin-top:20px;line-height:1.7;font-size:16px;">
+          지속가능한 기업 경영을 위한 필수 요소인 자원 재생과 재활용.<br />
+          ZYCORE가 귀사의 ESG 경영 목표를 실현할 수 있도록 함께하겠습니다.
+        </p>
+        <div class="esg-badges" style="margin-top:28px;">
+          <span class="esg-badge">ESG 경영 지원</span>
+          <span class="esg-badge">탄소 저감</span>
+          <span class="esg-badge">순환 경제</span>
+          <span class="esg-badge">자원 효율화</span>
+        </div>
+      </div>
+      <div class="esg-points fade-up">
+        <div class="esg-point" id="esg-point-env">
+          <div class="esg-point-icon">🌿</div>
+          <div>
+            <h4>환경 (Environment)</h4>
+            <p>폐기물 발생량 감축과 자원 순환을 통해 탄소 배출을 줄이고 환경 개선에 기여합니다.</p>
+          </div>
+        </div>
+        <div class="esg-point" id="esg-point-social">
+          <div class="esg-point-icon">🤝</div>
+          <div>
+            <h4>사회 (Social)</h4>
+            <p>지역 사회와 함께하는 자원 재생 활동으로 공동체 가치를 높이고 사회적 책임을 실천합니다.</p>
+          </div>
+        </div>
+        <div class="esg-point" id="esg-point-gov">
+          <div class="esg-point-icon">⚖️</div>
+          <div>
+            <h4>지배구조 (Governance)</h4>
+            <p>투명한 자원 거래 프로세스와 신뢰할 수 있는 파트너십으로 건전한 거버넌스를 지원합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="container">
+    <span class="section-tag fade-up">HOW IT WORKS</span>
+    <h2 class="section-title fade-up">간단한 4단계로 시작하세요</h2>
+    <p class="section-sub fade-up">복잡한 절차 없이 빠르고 간편하게 서비스를 이용하실 수 있습니다.</p>
+    <div class="process-steps">
+      <div class="process-step fade-up" id="process-step-1">
+        <div class="step-num">1</div>
+        <h4>무료 상담 신청</h4>
+        <p>전화 또는 온라인 양식으로 간편하게 상담을 신청하세요.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step fade-up" id="process-step-2">
+        <div class="step-num">2</div>
+        <h4>현황 분석</h4>
+        <p>전문 컨설턴트가 귀사의 자원 현황을 파악하고 분석합니다.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step fade-up" id="process-step-3">
+        <div class="step-num">3</div>
+        <h4>맞춤 솔루션 제안</h4>
+        <p>분석 결과를 바탕으로 최적의 자원 재생 방안을 제안합니다.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step fade-up" id="process-step-4">
+        <div class="step-num">4</div>
+        <h4>서비스 실행</h4>
+        <p>수거, 처리, 거래까지 원스탑으로 서비스를 진행합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <span class="section-tag fade-up" style="color:var(--green)">CONTACT US</span>
+    <h2 class="section-title fade-up" style="color:#fff">지금 상담을 받아보세요</h2>
+    <p class="section-sub fade-up" style="color:rgba(255,255,255,0.6)">전문 컨설턴트가 최적의 솔루션을 안내해 드립니다.</p>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <h3>ZYCORE와 함께<br />지속가능한 미래를</h3>
+        <div class="contact-item" id="contact-item-address">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <label>주소</label>
+            <span>경기도 평택시 청북읍 한산길</span>
+          </div>
+        </div>
+        <div class="contact-item" id="contact-item-phone">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <label>전화</label>
+            <span>010-9169-3862</span>
+          </div>
+        </div>
+        <div class="phone-display fade-up">
+          <div class="phone-display-icon">📲</div>
+          <div>
+            <div class="phone-display-label">지금 바로 전화 상담</div>
+            <a href="tel:01091693862" class="phone-display-num" id="contact-phone-link" onclick="trackCTA('전화상담', 'contact-section')" style="text-decoration:none;">
+              010-9169-3862
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-up">
+        <h3>온라인 상담 신청</h3>
+        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">성함 *</label>
+              <input type="text" id="form-name" name="name" placeholder="홍길동" required />
+            </div>
+            <div class="form-group">
+              <label for="form-company">회사명</label>
+              <input type="text" id="form-company" name="company" placeholder="(주)회사명" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-phone">연락처 *</label>
+            <input type="tel" id="form-phone" name="phone" placeholder="010-0000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="form-service">상담 유형 *</label>
+            <select id="form-service" name="service" required>
+              <option value="">상담 유형을 선택해 주세요</option>
+              <option value="recycling">재활용 수거 상담</option>
+              <option value="battery">폐배터리 거래</option>
+              <option value="resource">자원 거래 상담</option>
+              <option value="consulting">자원 재생 컨설팅</option>
+              <option value="other">기타 문의</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-message">문의 내용</label>
+            <textarea id="form-message" name="message" placeholder="문의하실 내용을 자유롭게 작성해 주세요."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            상담 신청하기 →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark">Z</div>
+          <span class="logo-text">ZYCORE</span>
+        </div>
+        <p class="footer-tagline">재활용·폐기물 자원 원스탑 솔루션</p>
+        <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:6px;">경기도 평택시 청북읍 한산길</p>
+        <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:2px;">Tel: 010-9169-3862</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services" id="footer-link-services">서비스 소개</a>
+        <a href="#esg" id="footer-link-esg">ESG 경영</a>
+        <a href="#process" id="footer-link-process">서비스 프로세스</a>
+        <a href="#contact" id="footer-link-contact">상담 문의</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 ZYCORE. All rights reserved.</p>
+      <p class="footer-location">자원 재생 컨설팅 · 재생 자원 거래 전문</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Phone Button -->
+<a href="tel:01091693862" class="floating-phone" id="floating-phone-btn" onclick="trackCTA('전화상담', 'floating-button')">
+  <div class="phone-pulse"></div>
+  <span>010-9169-3862</span>
+</a>
+
+<script>
+  // ── GTM dataLayer push helpers ──
+  window.dataLayer = window.dataLayer || [];
+
+  function trackCTA(label, location) {
+    dataLayer.push({
+      event: 'cta_click',
+      cta_label: label,
+      cta_location: location,
+      page_path: window.location.pathname
+    });
+  }
+
+  // ── Scroll to contact ──
+  function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    trackCTA('무료상담신청', 'header');
+  }
+
+  // ── Mobile nav ──
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('open');
+  }
+
+  // ── Form submit ──
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const service = document.getElementById('form-service').value;
+    const name = document.getElementById('form-name').value;
+
+    dataLayer.push({
+      event: 'form_submit',
+      form_id: 'contact_form',
+      service_type: service,
+      page_path: window.location.pathname
+    });
+
+    const btn = document.getElementById('form-submit-btn');
+    btn.textContent = '✅ 상담 신청 완료! 곧 연락드리겠습니다.';
+    btn.style.background = 'linear-gradient(135deg, #16a34a, #15803d)';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = '상담 신청하기 →';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  // ── Intersection Observer for animations ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Sticky header ──
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('site-header');
+    header.style.background = window.scrollY > 50
+      ? 'rgba(10,22,40,0.98)'
+      : 'rgba(10,22,40,0.92)';
+  });
+
+  // ── GA4 scroll depth tracking ──
+  const scrollMilestones = [25, 50, 75, 100];
+  const tracked = new Set();
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    scrollMilestones.forEach(m => {
+      if (pct >= m && !tracked.has(m)) {
+        tracked.add(m);
+        dataLayer.push({ event: 'scroll_depth', scroll_percent: m });
+      }
+    });
+  });
+
+  // ── Section view tracking ──
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        dataLayer.push({
+          event: 'section_view',
+          section_id: entry.target.id,
+          page_path: window.location.pathname
+        });
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  ['hero', 'services', 'cta-section', 'esg', 'process', 'contact'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+</script>
+</body>
+</html>
