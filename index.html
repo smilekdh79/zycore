@@ -17,6 +17,19 @@
   })(window,document,'script','dataLayer','GTM-MFNCP45V');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJ9SZCQJ42"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GJ9SZCQJ42', {
+      page_title: document.title,
+      page_path: window.location.pathname
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -704,15 +717,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </a>
 
 <script>
-  // ── GTM dataLayer push helpers ──
-  window.dataLayer = window.dataLayer || [];
+  // ── GTM dataLayer + GA4 gtag helpers ──
+  // dataLayer는 GA4 스니펫에서 이미 선언됨
 
   function trackCTA(label, location) {
+    // GTM dataLayer 전송
     dataLayer.push({
       event: 'cta_click',
       cta_label: label,
       cta_location: location,
       page_path: window.location.pathname
+    });
+    // GA4 직접 전송
+    gtag('event', 'cta_click', {
+      cta_label: label,
+      cta_location: location
     });
   }
 
@@ -734,11 +753,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const service = document.getElementById('form-service').value;
     const name = document.getElementById('form-name').value;
 
+    // GTM dataLayer 전송
     dataLayer.push({
       event: 'form_submit',
       form_id: 'contact_form',
       service_type: service,
       page_path: window.location.pathname
+    });
+    // GA4 직접 전송
+    gtag('event', 'generate_lead', {
+      form_id: 'contact_form',
+      service_type: service
     });
 
     const btn = document.getElementById('form-submit-btn');
